@@ -35,12 +35,37 @@ const myFunction = function(){
 }
 
 // console.log(typeof outsideTemp) // -> object
-console.log(typeof myFunction) // -> function
-console.log(typeof heros) // -> object
-console.log(typeof myObj) // -> undefined **
+// console.log(typeof myFunction) // -> function
+// console.log(typeof heros) // -> object
+// console.log(typeof myObj) // -> undefined **
 
 
 // JavaScript is a dynamic language and not static, 
 // which means that variables can hold values of different types during runtime. 
 // Unlike languages such as Typescript or Java, 
 // you don't need to declare the data type of a variable explicitly.
+
+
+
+
+
+// **************************** Memory *******************************
+
+// Stack (Primitive) , Heap (Non Primitive)
+
+let myYoutubeName = "hiteshchoudharydotcom"
+
+let anotherName = myYoutubeName // copy
+// console.log(anotherName) // -> hiteshchoudharydotcom
+anotherName = "chaiaurcode"
+// console.log(anotherName) // -> chaiaurcode
+// console.log(myYoutubeName) // -> hiteshchoudharydotcom
+
+let user1 = { // non primitive
+    email : "user1@google.com",
+    upi : "user1@ybl",
+}
+let user2 = user1; // reference
+user2.email = "hitesh@google.com"
+// console.log(user1.email) // -> hitesh@google.com
+// console.log(user2.email) // -> hitesh@google.com
