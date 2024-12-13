@@ -55,3 +55,37 @@ function loginUserMessage1(username = "default"){
 }
 // console.log(loginUserMessage1("qwerty")) // -> qwerty just logged in
 // console.log(loginUserMessage1()) // -> default just logged in
+
+
+function calculateCartPrice(num1){
+    return num1
+}
+// console.log(calculateCartPrice(27854)) // -> 27854
+
+function calculateCartPrice1(...num12){
+    return num12
+} 
+// console.log(calculateCartPrice1(27, 78, 43)) // -> [ 27, 78, 43 ]
+
+
+function calc12(val1, val2, ...num12){
+    return num12
+} 
+// console.log(calc12(23,45,67,34,3,35,7)) // -> [ 67, 34, 3, 35, 7 ] // all except first2 values
+
+const user = {
+    username : "hitesh",
+    price : 199
+}
+
+function handleObject(anyobject){
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`)
+}
+
+// handleObject(user) // -> Username is hitesh and price is 199
+
+handleObject({
+    username : "hitesh",
+    price : 199
+}) 
+// -> Username is hitesh and price is 199
