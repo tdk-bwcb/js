@@ -61,3 +61,29 @@ const users = [
 // // -> [ [ 'id', '123abc' ], [ 'name', 'Sammy' ], [ 'isLoggedIn', false ] ]
 
 // console.log(tinderUser.hasOwnProperty('isLoggedIn')) // -> true
+
+
+
+// ********************* *************************** ************************** 
+// Object destructuring & JSON API
+
+const course = {
+    coursename : "js in hindi",
+    price : "999",
+    courseInstructor : "hitesh"
+}
+
+// const {courseInstructor} = course
+// console.log(courseInstructor) // -> hitesh
+
+const {courseInstructor : inst} = course
+// console.log(inst) // -> hitesh
+
+
+// JSON
+// {
+//     "name" : "hitesh",
+//     "course" : "javascript",
+//     "price" : "free",
+// }
+
