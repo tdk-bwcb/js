@@ -25,7 +25,14 @@ const shopppingCart = [
         price : 4999
     },
     {
-        itemName : "js3 urse",
-        price : 4999
+        itemName : "js3 course",
+        price : 7999
+    },
+    {
+        itemName : "ps3 course",
+        price : 12999
     }
 ]
+
+const price = shopppingCart.reduce( (acc, item) => acc + item.price , 0 )
+console.log(price) // -> 28996
