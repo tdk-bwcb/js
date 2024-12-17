@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:#212121; color:azure">
+    <br>
+    0	UNSENT - Client has been created. open() not called yet.
+    <br>
+    1	OPENED - open() has been called.
+    <br>
+    2	HEADERS_RECEIVED - send() has been called, and headers and status are available.
+    <br>
+    3	LOADING	- Downloading; responseText holds partial data.
+    <br>
+    4	DONE - The operation is complete.
+    <br>
+    <!-- Div to display fetched data -->
+    <div id="user-data" style="background-color:beige; color:black; padding:20px; margin-top:20px;">
+        Loading user data...
+    </div>
+</body>
+
+<style>
+    #user-data{
+        text-align: center;
+        font-size: large;
+    }
+</style>
+
+<script>
+
+    const requestUrl = "https://api.github.com/users/hiteshchoudhary"
+    const xhr = new XMLHttpRequest()
+    xhr.open('GET', requestUrl)
+
+    let imgUrl
+    let name
+    let followers
+
+    // console.log("here")
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            // console.log(this.responseText);
+            // const data = this.responseText
+            // console.log(data.followers) // -> undefined
+            // console.log(typeof data) // -> string **
+            const data = JSON.parse(this.responseText)
+            console.log(data) // -? ✅
+            console.log(data.followers) // -> ✅
+            followers = data.followers
+            imgUrl = data.avatar_url
+            name = data.name
+
+            const qw = document.getElementById("user-data")
+            qw.innerHTML = `
+                <p>${name}</p>
+                <p>Followers: ${followers}</p>
+                <p><img src=${imgUrl} style="background-color:aquamarine; padding:7px; height:200px; border-radius: 50%"></p>
+
+            `
+            qw.style.width = "40%";
+        }
+    }
+    // console.log(xhr.readyState)
+    xhr.send()
+    
+
+
+    
+
+</script>
+
+</html>
