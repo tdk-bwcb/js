@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout(function(){
+    //     console.log("Hitesh")
+    // },2000) 
+    // // -> prints once after given time
+
+    // const fxn = function(){
+    //     console.log("Hitesh")
+    // }
+    // setTimeout(fxn, 2000)
+    // -> same as above
+
+    // document.querySelector('h1').innerHTML = "Best js series"
+    // -> changes text immediately
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "Best js series"
+    }
+    const tm = setTimeout(changeText, 2000)
+    // -> changes text after 5s
+
+    const stop2 = document.getElementById("stop")
+    stop2.addEventListener('click', function(){
+        console.log("Stop button clicked")
+        clearTimeout(tm)
+    })
+
+
+</script>
+</html>
